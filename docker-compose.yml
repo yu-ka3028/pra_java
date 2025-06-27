@@ -1,0 +1,16 @@
+services:
+  java-dev:
+    build: .
+    container_name: java-development
+    volumes:
+      - .:/app
+      - maven-cache:/root/.m2
+    working_dir: /app
+    ports:
+      - '8081:8080'
+    environment:
+      - JAVA_HOME=/usr/local/openjdk-17
+    command: tail -f /dev/null # コンテナを起動し続ける
+
+volumes:
+  maven-cache:
