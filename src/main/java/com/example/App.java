@@ -22,6 +22,7 @@ public class App {
         //答えは8で固定
         // Integer answer = 8;
         Integer answer = new Random().nextInt(10) + 1;
+        Scanner scanner = new Scanner(System.in);
 
         while (true){
             // ユーザーからの入力をそのまま取得
@@ -33,7 +34,9 @@ public class App {
 
             System.out.print("Your guess?(1-10) ");
             count++;
-            Integer guess = new Scanner(System.in).nextInt();
+            //ループ内でインスタンス作成するとSystem.inを何度も読み込む無駄が発生するためループ外で生成し、ループ内ではそのインスタンスを使用する
+            // Integer guess = new Scanner(System.in).nextInt();
+            Integer guess = scanner.nextInt();
             
             if (guess == answer){
                 System.out.println("正解" + "Answer: " + answer + "\n" + "試行回数: " + count);
