@@ -22,12 +22,20 @@ public class App {
         while(true){
             if("+".equals(operator)){
                 System.out.println("足し算");
+                count = Integer.parseInt(values[0]) + Integer.parseInt(values[1]);
+                System.out.println("count: " + count);
             } else if("-".equals(operator)){
                 System.out.println("引き算");
+                count = Integer.parseInt(values[0]) - Integer.parseInt(values[1]);
+                System.out.println("count: " + count);
             } else if("*".equals(operator)){
                 System.out.println("掛け算");
+                count = Integer.parseInt(values[0]) * Integer.parseInt(values[1]);
+                System.out.println("count: " + count);
             } else if("/".equals(operator)){
                 System.out.println("割り算");
+                count = Integer.parseInt(values[0]) / Integer.parseInt(values[1]);
+                System.out.println("count: " + count);
             } else{
                 System.out.println("残念");
             }
