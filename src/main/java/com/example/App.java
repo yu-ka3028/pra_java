@@ -40,6 +40,7 @@ public class App {
             } else{
                 System.out.println("残念");
             }
+            //今後の実装でループの必要あるので一旦これで
             break;
         }
     }
