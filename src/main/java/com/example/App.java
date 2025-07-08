@@ -10,6 +10,7 @@ public class App {
         //電卓に入力した内容を取得
         System.out.println("電卓: ");
         Scanner scanner = new Scanner(System.in);
+        Calculator calculator = new Calculator();
 
         String inputValue = scanner.nextLine();
         String[] values = inputValue.split("[-+*/]");
@@ -22,19 +23,19 @@ public class App {
         while(true){
             if("+".equals(operator)){
                 System.out.println("足し算");
-                count = Integer.parseInt(values[0]) + Integer.parseInt(values[1]);
+                count = calculator.add(Integer.parseInt(values[0]), Integer.parseInt(values[1]));
                 System.out.println("count: " + count);
             } else if("-".equals(operator)){
                 System.out.println("引き算");
-                count = Integer.parseInt(values[0]) - Integer.parseInt(values[1]);
+                count = calculator.subtract(Integer.parseInt(values[0]), Integer.parseInt(values[1]));
                 System.out.println("count: " + count);
             } else if("*".equals(operator)){
                 System.out.println("掛け算");
-                count = Integer.parseInt(values[0]) * Integer.parseInt(values[1]);
+                count = calculator.multiply(Integer.parseInt(values[0]), Integer.parseInt(values[1]));
                 System.out.println("count: " + count);
             } else if("/".equals(operator)){
                 System.out.println("割り算");
-                count = Integer.parseInt(values[0]) / Integer.parseInt(values[1]);
+                count = calculator.divide(Integer.parseInt(values[0]), Integer.parseInt(values[1]));
                 System.out.println("count: " + count);
             } else{
                 System.out.println("残念");

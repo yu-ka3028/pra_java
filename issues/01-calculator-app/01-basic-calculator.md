@@ -15,17 +15,17 @@ Java の基本文法を習得しながら、四則演算ができるコンソー
 
 ### 1. Java 基本文法の確認
 
-- [ ] 変数の宣言と初期化
-- [ ] メソッドの定義と呼び出し
-- [ ] 条件分岐（if-else 文）
-- [ ] ループ処理（for 文、while 文）
-- [ ] 配列の使用方法
+- [x] 変数の宣言と初期化
+- [x] メソッドの定義と呼び出し
+- [x] 条件分岐（if-else 文）
+- [x] ループ処理（for 文、while 文）
+- [x] 配列の使用方法
 
 ### 2. コンソール入出力の調査
 
 - [x] `Scanner`クラスの使用方法
 - [x] `System.out.println()`の使用方法
-- [ ] 文字列と数値の変換方法
+- [x] 文字列と数値の変換方法
 
 ### 3. 計算精度の調査
 
@@ -37,38 +37,50 @@ Java の基本文法を習得しながら、四則演算ができるコンソー
 branch: console_calc
 ### Phase 1: 基本構造の作成
 
-- [ ] `Calculator`クラスの作成
-- [ ] メインメソッドの実装
-- [ ] 基本的な計算メソッドの定義
+- [x] `Calculator`クラスの作成
+- [x] メインメソッドの実装
+- [x] 基本的な計算メソッドの定義
 
 ### Phase 2: 四則演算の実装
 
-- [ ] 加算メソッドの実装
-- [ ] 減算メソッドの実装
-- [ ] 乗算メソッドの実装
-- [ ] 除算メソッドの実装
+- [x] 加算メソッドの実装
+- [x] 減算メソッドの実装
+- [x] 乗算メソッドの実装
+- [x] 除算メソッドの実装
 
 ### Phase 3: コンソール入出力の実装
 
-- [ ] `Scanner`オブジェクトの作成
-- [ ] 数値入力の処理
-- [ ] 演算子入力の処理
-- [ ] 結果表示の実装
+- [x] `Scanner`オブジェクトの作成
+- [x] 数値入力の処理
+- [x] 演算子入力の処理
+- [x] 結果表示の実装
 
-### Phase 4: 入力値チェックの実装
+### Phase 4: 四則演算の混合計算の実装
 
-- [ ] 数値の妥当性チェック
-- [ ] 演算子の妥当性チェック
-- [ ] エラーメッセージの表示
+- [ ] マイナス値を含む計算
+    - 文脈ベースの符号判定
+    - 符号を数値と結合する分割方法
+    - カッコをつける方法
+- [ ] 連続した計算（1+1-5など）
+- [ ] 演算子混合時の四則計算（*と/が優先されるなど）
+- [ ] エラーメッセージの表示（桁数？）
+
+## Phase 5: 小数点のある計算の実装
+- [ ] 小数点のある要素の計算
 
 ## 動作確認チェックリスト
 
 ### 基本機能テスト
 
-- [ ] 加算（5 + 3 = 8）が正常に動作する
-- [ ] 減算（10 - 4 = 6）が正常に動作する
-- [ ] 乗算（6 \* 7 = 42）が正常に動作する
-- [ ] 除算（15 / 3 = 5）が正常に動作する
+- [x] 加算（5 + 3 = 8）が正常に動作する
+- [ ] 加算（-1 + 1 = 0）が正常に動作する
+- [ ] 加算（1.5 + 1.2 = 2.7）が正常に動作する
+- [x] 減算（10 - 4 = 6）が正常に動作する
+- [ ] 減算（-10.2 - 4.1 = -14.3）が正常に動作する
+- [x] 乗算（6 * 7 = 42）が正常に動作する
+- [ ] 乗算（6.2 * 2 = 3.1）が正常に動作する
+- [x] 除算（15 / 3 = 5）が正常に動作する
+- [ ] 除算（5 * (-2) = -10）が正常に動作する
 
 ### エッジケーステスト
 
@@ -102,31 +114,6 @@ branch: console_calc
 - [Java Scanner Class](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Scanner.html)
 - [Java Math Class](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Math.html)
 - [BigDecimal for Precise Calculations](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/BigDecimal.html)
-
-### 実装例
-
-```java
-public class Calculator {
-    public double add(double a, double b) {
-        return a + b;
-    }
-
-    public double subtract(double a, double b) {
-        return a - b;
-    }
-
-    public double multiply(double a, double b) {
-        return a * b;
-    }
-
-    public double divide(double a, double b) {
-        if (b == 0) {
-            throw new IllegalArgumentException("ゼロ除算はできません");
-        }
-        return a / b;
-    }
-}
-```
 
 ### 次のステップ
 
