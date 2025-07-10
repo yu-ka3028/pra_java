@@ -71,8 +71,6 @@ public class App {
                 } catch (Exception e) {
                     System.out.println("エラー: " + e.getMessage());
                 }
-            } else {
-                System.out.println("無効な入力です。= または clear を入力してください。");
             }
         }
     }
@@ -108,7 +106,7 @@ public class App {
             if (VALID_OPERATORS.contains(operator)) {
                 return operator;
             } else {
-                System.out.println("エラー: 演算子は +, -, *, /, ^ のいずれかを入力してください。");
+                System.out.println("エラー: 演算子は +, -, *, /, ^, sqrt のいずれかを入力してください。");
                 System.out.println("operator: ");
             }
         }
